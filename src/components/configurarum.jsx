@@ -64,6 +64,10 @@ const ConfigUM = () => {
     // Enviar datos a la API
     try {
       const formData = new FormData();
+      console.log('Padre:');
+      console.log(selectedUnidadPadre);
+      console.log('Hijo:');
+      console.log(selectedUnidadHijo);
       formData.append('idump', selectedUnidadPadre);
       formData.append('idumc', selectedUnidadHijo);
       formData.append('cantidadconversion', cantidadConversion);
