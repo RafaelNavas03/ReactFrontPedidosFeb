@@ -15,7 +15,7 @@ const Reserva = () => {
 
   const obtenerMesas = async () => {
     try {
-      const response = await fetch('http://projectdjangobakfebrero-production.up.railway.app/Mesas/ver_mesas/');
+      const response = await fetch('https://projectdjangobakfebrero-production.up.railway.app/Mesas/ver_mesas/');
       if (!response.ok) {
         throw new Error('Error al obtener las mesas');
       }
