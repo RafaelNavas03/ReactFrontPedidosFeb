@@ -15,7 +15,7 @@ const LoginForm = ({ onLogin }) => {
             token: localStorage.getItem("token"), // Obtener el token almacenado
           }),
         });
-
+console.log(response);
         if (response.ok) {
           const data = await response.json();
           const rol = data.rol;
