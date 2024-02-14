@@ -60,7 +60,7 @@ const ShoppingCart = () => {
     
   
     if (id_cuenta) {
-      fetch(`projectdjangobakfebrero-production.up.railway.app/Login/obtener_usuario/${id_cuenta}/`)
+      fetch(`https://projectdjangobakfebrero-production.up.railway.app/Login/obtener_usuario/${id_cuenta}/`)
         .then(response => response.json())
         .then(data => {
           setUserData(data.usuario);
