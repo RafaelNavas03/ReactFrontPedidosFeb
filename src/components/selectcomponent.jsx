@@ -34,7 +34,7 @@ const TransferContainer = ({ onValor, previouslySelectedItems }) => {
         const fetchComponentes = async () => {
             try {
                 setLoading(true);
-                const response = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/listarcomponentes/');
+                const response = await fetch('https://projectdjangobakfebrero-production.up.railway.app/producto/listarcomponentes/');
                 if (response.ok) {
                     const data = await response.json();
                     const componentesWithDefaultCosto = data.componentes.map((componente) => ({

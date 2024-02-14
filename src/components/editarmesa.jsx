@@ -16,7 +16,7 @@ const Mesas = () => {
   const [openp, setOpenp] = useState(false);
 
   useEffect(() => {
-    fetch('projectdjangobakfebrero-production.up.railway.app/Mesas/ver_mesas/')
+    fetch('https://projectdjangobakfebrero-production.up.railway.app/Mesas/ver_mesas/')
       .then(response => response.json())
       .then(data => setMesas(data.mesas))
       .catch(error => console.error('Error al obtener las mesas:', error));
@@ -44,12 +44,12 @@ const Mesas = () => {
       formData.append('activa', values.activa);
       formData.append('max_personas', values.max_personas);
 
-      await fetch(`projectdjangobakfebrero-production.up.railway.app/Mesas/editar_mesa/${mesa_id}/`, {
+      await fetch(`https://projectdjangobakfebrero-production.up.railway.app/Mesas/editar_mesa/${mesa_id}/`, {
         method: 'POST',
         body: formData,
       });
 
-      fetch('projectdjangobakfebrero-production.up.railway.app/Mesas/ver_mesas/')
+      fetch('https://projectdjangobakfebrero-production.up.railway.app/Mesas/ver_mesas/')
         .then(response => response.json())
         .then(data => setMesas(data.mesas))
         .catch(error => console.error('Error al obtener las mesas:', error));
@@ -94,7 +94,7 @@ const Mesas = () => {
   };
 
   const cargarMesas = async () => {
-    fetch('projectdjangobakfebrero-production.up.railway.app/Mesas/ver_mesas/')
+    fetch('https://projectdjangobakfebrero-production.up.railway.app/Mesas/ver_mesas/')
       .then(response => response.json())
       .then(data => setMesas(data.mesas))
       .catch(error => console.error('Error al obtener las mesas:', error));

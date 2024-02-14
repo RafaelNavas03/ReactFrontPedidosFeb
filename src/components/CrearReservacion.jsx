@@ -12,12 +12,12 @@ const CrearReservacionForm = () => {
   const [loadingHorarios, setLoadingHorarios] = useState(false);
 
   useEffect(() => {
-    fetch('projectdjangobakfebrero-production.up.railway.app/cliente/ver_clientes/')
+    fetch('https://projectdjangobakfebrero-production.up.railway.app/cliente/ver_clientes/')
       .then(response => response.json())
       .then(data => setClientes(data.clientes))
       .catch(error => console.error(error));
 
-    fetch('projectdjangobakfebrero-production.up.railway.app/Mesas/ver_mesas/')
+    fetch('https://projectdjangobakfebrero-production.up.railway.app/Mesas/ver_mesas/')
       .then(response => response.json())
       .then(data => setMesas(data.mesas))
       .catch(error => console.error(error));
@@ -36,7 +36,7 @@ const CrearReservacionForm = () => {
         formData.append(key, formattedValues[key]);
       }
 
-      const response = await fetch('projectdjangobakfebrero-production.up.railway.app/Mesas/crear_reservacion/', {
+      const response = await fetch('https://projectdjangobakfebrero-production.up.railway.app/Mesas/crear_reservacion/', {
         method: 'POST',
         body: formData,
       });
@@ -70,7 +70,7 @@ const CrearReservacionForm = () => {
         setLoadingHorarios(true);
 
         try {
-          const response = await fetch(`projectdjangobakfebrero-production.up.railway.app/horarios/get/${dayId}`);
+          const response = await fetch(`https://projectdjangobakfebrero-production.up.railway.app/horarios/get/${dayId}`);
           if (!response.ok) {
             throw new Error('Error al obtener los detalles del horario');
           }

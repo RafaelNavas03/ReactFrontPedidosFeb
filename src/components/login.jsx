@@ -6,7 +6,7 @@ const LoginForm = ({ onLogin }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("projectdjangobakfebrero-production.up.railway.app/Login/rol/", {
+        const response = await fetch("https://projectdjangobakfebrero-production.up.railway.app/Login/rol/", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -43,7 +43,7 @@ console.log(response);
   const onFinish = async (values) => {
     try {
       const response = await fetch(
-        "projectdjangobakfebrero-production.up.railway.app/Login/iniciar_sesion/",
+        "https://projectdjangobakfebrero-production.up.railway.app/Login/iniciar_sesion/",
         {
           method: "POST",
           headers: {
@@ -76,7 +76,7 @@ console.log(response);
         onLogin(data);
 
         // Después de que el usuario ha iniciado sesión, realiza la redirección
-        const rolResponse = await fetch("projectdjangobakfebrero-production.up.railway.app/Login/rol/", {
+        const rolResponse = await fetch("https://projectdjangobakfebrero-production.up.railway.app/Login/rol/", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

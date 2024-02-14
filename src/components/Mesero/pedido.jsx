@@ -32,17 +32,17 @@ const RealizarPedidoMesa = ({ visible, onClose, idMesa }) => {
   const comboPageSize = 3;
 
   useEffect(() => {
-    fetch("projectdjangobakfebrero-production.up.railway.app/cliente/ver_clientes/")
+    fetch("https://projectdjangobakfebrero-production.up.railway.app/cliente/ver_clientes/")
       .then((response) => response.json())
       .then((data) => setClientes(data.clientes))
       .catch((error) => console.error("Error fetching clientes:", error));
 
-    fetch("projectdjangobakfebrero-production.up.railway.app/producto/listar/")
+    fetch("https://projectdjangobakfebrero-production.up.railway.app/producto/listar/")
       .then((response) => response.json())
       .then((data) => setProductos(data.productos))
       .catch((error) => console.error("Error fetching productos:", error));
 
-    fetch("projectdjangobakfebrero-production.up.railway.app/combos/ver_combos/")
+    fetch("https://projectdjangobakfebrero-production.up.railway.app/combos/ver_combos/")
       .then((response) => response.json())
       .then((data) => setCombos(data.combos))
       .catch((error) => console.error("Error fetching combos:", error));
@@ -274,7 +274,7 @@ console.log(`Total pedido: ${totalPedido}`);
       formData.append("detalles_pedido", detallesPedidoString);
 
       const response = await fetch(
-        "projectdjangobakfebrero-production.up.railway.app/Mesero/tomar_pedido/",
+        "https://projectdjangobakfebrero-production.up.railway.app/Mesero/tomar_pedido/",
         {
           method: "POST",
           body: formData,

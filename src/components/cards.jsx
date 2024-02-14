@@ -14,7 +14,7 @@ const LocationCard = () => {
     setSelectedMarker(coordinates); // Almacenar las coordenadas seleccionadas
   };
   useEffect(() => {
-    fetch('projectdjangobakfebrero-production.up.railway.app/sucursal/sucusarleslist/')
+    fetch('https://projectdjangobakfebrero-production.up.railway.app/sucursal/sucusarleslist/')
       .then(response => response.json())
       .then(data => {
         if (data && data.sucursales) {

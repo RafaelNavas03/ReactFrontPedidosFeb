@@ -19,7 +19,7 @@ const RealizarPedidoMesero = () => {
   const [MesaEnv, setMesaEnv] = useState("");
 
   useEffect(() => {
-    fetch("projectdjangobakfebrero-production.up.railway.app/Mesas/ver_mesas/")
+    fetch("https://projectdjangobakfebrero-production.up.railway.app/Mesas/ver_mesas/")
       .then((response) => response.json())
       .then((data) => {
         const filteredMesas = data.mesas.filter(

@@ -10,7 +10,7 @@ const TipoProducto = () => {
 
   const listarp = async () => {
     try {
-      const response = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/listarproductos/');
+      const response = await fetch('https://projectdjangobakfebrero-production.up.railway.app/producto/listarproductos/');
       const data = await response.json();
       setTiposProductos(data.tipos_productos);
     } catch (error) {

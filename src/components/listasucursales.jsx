@@ -18,7 +18,7 @@ const ListSucursales = () => {
 
     const fetchData = () => {
         setLoading(true);
-        fetch('projectdjangobakfebrero-production.up.railway.app/sucursal/sucusarleslist/')
+        fetch('https://projectdjangobakfebrero-production.up.railway.app/sucursal/sucusarleslist/')
             .then((response) => response.json())
             .then((data) => {
                 setSucursalesData(data.sucursales);
@@ -40,7 +40,7 @@ const ListSucursales = () => {
         const formData = new FormData();
         formData.append('id_sucursal', record.id_sucursal);
         formData.append('sestado', checked ? '1' : '0');
-        fetch('projectdjangobakfebrero-production.up.railway.app/sucursal/actsucursal/', {
+        fetch('https://projectdjangobakfebrero-production.up.railway.app/sucursal/actsucursal/', {
             method: 'POST',
             body: formData,
         })
@@ -125,7 +125,7 @@ const ListSucursales = () => {
         form.validateFields()
             .then((values) => {
                 // Enviar los datos al servidor para crear la sucursal
-                fetch('projectdjangobakfebrero-production.up.railway.app/sucursal/crearsucursal/', {
+                fetch('https://projectdjangobakfebrero-production.up.railway.app/sucursal/crearsucursal/', {
                     method: 'POST',
                     body: JSON.stringify(values),
                     headers: {

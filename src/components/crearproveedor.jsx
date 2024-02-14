@@ -21,7 +21,7 @@ const CrearProveedor = () => {
   
       console.log('Valores a enviar:', formData); 
   
-      const response = await axios.post('projectdjangobakfebrero-production.up.railway.app/Proveedores/crear_proveedor/', formData, {
+      const response = await axios.post('https://projectdjangobakfebrero-production.up.railway.app/Proveedores/crear_proveedor/', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

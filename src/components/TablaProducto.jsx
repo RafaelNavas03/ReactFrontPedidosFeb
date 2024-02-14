@@ -23,7 +23,7 @@ const TablaPro = () => {
     // Función para obtener los datos de la API
     const fetchData = async () => {
         try {
-            const response = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/listar/');
+            const response = await fetch('https://projectdjangobakfebrero-production.up.railway.app/producto/listar/');
             const result = await response.json();
             setData(result.productos);
         } catch (error) {
@@ -89,7 +89,7 @@ const TablaPro = () => {
         console.log('Actualizando producto en el backend:', updatedProduct);
     
         try {
-            const response = await fetch(`projectdjangobakfebrero-production.up.railway.app/producto/editarproducto/${updatedProduct.id_producto}/`, {
+            const response = await fetch(`https://projectdjangobakfebrero-production.up.railway.app/producto/editarproducto/${updatedProduct.id_producto}/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

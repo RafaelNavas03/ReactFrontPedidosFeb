@@ -67,7 +67,7 @@ const Combos = () => {
     const fetchData = async (page) => {
         try {
             console.log('xxxxxxxxxxxxxxxxxxA');
-            const response = await fetch(`projectdjangobakfebrero-production.up.railway.app/combos/ver_combos/?page=${page}`);
+            const response = await fetch(`https://projectdjangobakfebrero-production.up.railway.app/combos/ver_combos/?page=${page}`);
             const data = await response.json();
             setCombos(data.combos);
             console.log(data.combos);

@@ -17,7 +17,7 @@ const ConfigPagos = ({ onSave }) => {
     Motorizado: "S",
   });
 
-  const apiUrl = "projectdjangobakfebrero-production.up.railway.app/pagos/creartipop/";
+  const apiUrl = "https://projectdjangobakfebrero-production.up.railway.app/pagos/creartipop/";
 
   const handleSave = async (index) => {
     try {
@@ -46,7 +46,7 @@ const ConfigPagos = ({ onSave }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("projectdjangobakfebrero-production.up.railway.app/pagos/tipodepagos/");
+        const response = await fetch("https://projectdjangobakfebrero-production.up.railway.app/pagos/tipodepagos/");
         if (response.ok) {
           const result = await response.json();
           updateData(result.tipopagos);

@@ -37,7 +37,7 @@ const Empresa = () => {
 
   const obtenerInformacionEmpresa = async () => {
     try {
-      const respuesta = await fetch('projectdjangobakfebrero-production.up.railway.app/empresa/infoEmpresa/', {
+      const respuesta = await fetch('https://projectdjangobakfebrero-production.up.railway.app/empresa/infoEmpresa/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ const Empresa = () => {
     }
 
     try {
-      const respuesta = await fetch(`projectdjangobakfebrero-production.up.railway.app/empresa/editar/`, {
+      const respuesta = await fetch(`https://projectdjangobakfebrero-production.up.railway.app/empresa/editar/`, {
         method: 'POST',
         body: formData,
       });

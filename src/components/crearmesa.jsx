@@ -13,7 +13,7 @@ const CrearMesa = () => {
         formData.append(key, values[key]);
       });
 
-      const response = await fetch("projectdjangobakfebrero-production.up.railway.app/Mesas/crear/", {
+      const response = await fetch("https://projectdjangobakfebrero-production.up.railway.app/Mesas/crear/", {
         method: "POST",
         body: formData,
       });

@@ -30,7 +30,7 @@ const RealizarPedido = ({ visible, onClose, bodega }) => {
     const obtenerProveedores = async () => {
       try {
         const responseProveedores = await fetch(
-          "projectdjangobakfebrero-production.up.railway.app/Proveedores/listar_proveedor/"
+          "https://projectdjangobakfebrero-production.up.railway.app/Proveedores/listar_proveedor/"
         );
         const dataProveedores = await responseProveedores.json();
         setProveedores(dataProveedores.proveedores);
@@ -42,7 +42,7 @@ const RealizarPedido = ({ visible, onClose, bodega }) => {
     const obtenerUnidadesMedida = async () => {
       try {
         const responseUnidadesMedida = await fetch(
-          "projectdjangobakfebrero-production.up.railway.app/producto/listarum/"
+          "https://projectdjangobakfebrero-production.up.railway.app/producto/listarum/"
         );
         const dataUnidadesMedida = await responseUnidadesMedida.json();
         setUnidadesMedida(dataUnidadesMedida.unidades_medida);
@@ -57,7 +57,7 @@ const RealizarPedido = ({ visible, onClose, bodega }) => {
     const obtenerProductos = async () => {
       try {
         const responseProductos = await fetch(
-          "projectdjangobakfebrero-production.up.railway.app/producto/listar/"
+          "https://projectdjangobakfebrero-production.up.railway.app/producto/listar/"
         );
         const dataProductos = await responseProductos.json();
         setProductos(dataProductos.productos);
@@ -69,7 +69,7 @@ const RealizarPedido = ({ visible, onClose, bodega }) => {
     const obtenerComponentes = async () => {
       try {
         const responseComponentes = await fetch(
-          "projectdjangobakfebrero-production.up.railway.app/producto/listarcomponentes/"
+          "https://projectdjangobakfebrero-production.up.railway.app/producto/listarcomponentes/"
         );
         const dataComponentes = await responseComponentes.json();
         setComponentes(dataComponentes.componentes);
@@ -92,7 +92,7 @@ const RealizarPedido = ({ visible, onClose, bodega }) => {
   const listarp = async (id_tipoproducto) => {
     setLoading(true);
     try {
-      let url = "projectdjangobakfebrero-production.up.railway.app/producto/listar_categorias/";
+      let url = "https://projectdjangobakfebrero-production.up.railway.app/producto/listar_categorias/";
 
       const responseCategorias = await fetch(url);
       const data = await responseCategorias.json();
@@ -333,7 +333,7 @@ const RealizarPedido = ({ visible, onClose, bodega }) => {
       console.log("Bodega:");
       console.log(bodega);
       const response = await fetch(
-        "projectdjangobakfebrero-production.up.railway.app/Inventario/crearinventario/" +
+        "https://projectdjangobakfebrero-production.up.railway.app/Inventario/crearinventario/" +
           bodega.id_bodega +
           "/",
         {

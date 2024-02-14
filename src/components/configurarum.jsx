@@ -13,7 +13,7 @@ const ConfigUM = () => {
 
     const obtenerUnidadesMedida = async () => {
       try {
-        const respuestaUnidadesMedida = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/listarum/');
+        const respuestaUnidadesMedida = await fetch('https://projectdjangobakfebrero-production.up.railway.app/producto/listarum/');
         if (!respuestaUnidadesMedida.ok) {
           throw new Error('Error al obtener las unidades de medida');
         }
@@ -30,7 +30,7 @@ const ConfigUM = () => {
   }, []);
   const obtenerConversiones = async () => {
     try {
-      const respuestaConversiones = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/conversionesum/');
+      const respuestaConversiones = await fetch('https://projectdjangobakfebrero-production.up.railway.app/producto/conversionesum/');
       if (!respuestaConversiones.ok) {
         console.error(respuestaConversiones.error);
       }
@@ -68,7 +68,7 @@ const ConfigUM = () => {
       formData.append('idumc', selectedUnidadHijo);
       formData.append('cantidadconversion', cantidadConversion);
 
-      const respuestaConfiguracion = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/configurarensamble/', {
+      const respuestaConfiguracion = await fetch('https://projectdjangobakfebrero-production.up.railway.app/producto/configurarensamble/', {
         method: 'POST',
         body: formData,
       });

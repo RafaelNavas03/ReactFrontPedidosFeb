@@ -41,7 +41,7 @@ const Proveedores = () => {
 
     const fetchProveedores = async () => {
         try {
-            const response = await fetch('projectdjangobakfebrero-production.up.railway.app/Proveedores/listar_proveedor/');
+            const response = await fetch('https://projectdjangobakfebrero-production.up.railway.app/Proveedores/listar_proveedor/');
             const data = await response.json();
             setProveedores(data.proveedores);
         } catch (error) {

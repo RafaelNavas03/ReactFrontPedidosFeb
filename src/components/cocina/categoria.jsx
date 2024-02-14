@@ -15,7 +15,7 @@ const CategoriaCocina = ({ id_tipoproducto }) => {
 
     const listarp = async () => {
         try {
-            let url = 'projectdjangobakfebrero-production.up.railway.app/producto/listar_categorias/';
+            let url = 'https://projectdjangobakfebrero-production.up.railway.app/producto/listar_categorias/';
 
             const responseCategorias = await fetch(url);
             const data = await responseCategorias.json();

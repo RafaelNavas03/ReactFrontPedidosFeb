@@ -27,7 +27,7 @@ const EditarCliente = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('projectdjangobakfebrero-production.up.railway.app/cliente/ver_clientes/');
+                const response = await fetch('https://projectdjangobakfebrero-production.up.railway.app/cliente/ver_clientes/');
                 const data = await response.json();
 
                 setClientes(data.clientes);
@@ -197,7 +197,7 @@ const EditarCliente = () => {
             }
     
     
-            const response = await fetch(`projectdjangobakfebrero-production.up.railway.app/cliente/actualizar_cliente/${editingCliente.id_cliente}/`, {
+            const response = await fetch(`https://projectdjangobakfebrero-production.up.railway.app/cliente/actualizar_cliente/${editingCliente.id_cliente}/`, {
                 method: 'POST',
                 body: formData,
             });

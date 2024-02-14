@@ -9,7 +9,7 @@ const CrearUnidadMedida = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/crearum/', {
+      const response = await fetch('https://projectdjangobakfebrero-production.up.railway.app/producto/crearum/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

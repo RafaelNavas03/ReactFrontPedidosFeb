@@ -37,10 +37,10 @@ const EditarCategoria = ({ onCancel }) => {
 
   const fetchCategorias = async () => {
     try {
-      const responseCategorias = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/listar_categorias/');
+      const responseCategorias = await fetch('https://projectdjangobakfebrero-production.up.railway.app/producto/listar_categorias/');
       const dataCategorias = await responseCategorias.json();
 
-      const responseTiposProductos = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/listarproductos/');
+      const responseTiposProductos = await fetch('https://projectdjangobakfebrero-production.up.railway.app/producto/listarproductos/');
       const dataTiposProductos = await responseTiposProductos.json();
 
       const tiposProductosMap = {};
@@ -64,7 +64,7 @@ const EditarCategoria = ({ onCancel }) => {
       const formData = new FormData();
       console.log('El valor enviado es :' + idca)
       formData.append('sestado', 0);
-      const response = await fetch(`projectdjangobakfebrero-production.up.railway.app/producto/editar_categoria/${idca}/`, {
+      const response = await fetch(`https://projectdjangobakfebrero-production.up.railway.app/producto/editar_categoria/${idca}/`, {
         method: 'POST',
         body: formData,
       });
@@ -88,7 +88,7 @@ const EditarCategoria = ({ onCancel }) => {
     const fetchTiposProductos = async () => {
       console.log('Que pasae');
       try {
-        const response = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/listarproductos/');
+        const response = await fetch('https://projectdjangobakfebrero-production.up.railway.app/producto/listarproductos/');
         const data = await response.json();
         setTiposProductos(data.tipos_productos);
       } catch (error) {
@@ -125,7 +125,7 @@ const EditarCategoria = ({ onCancel }) => {
       }
 
       const response = await fetch(
-        `projectdjangobakfebrero-production.up.railway.app/producto/editar_categoria/${selectedCategoria.id_categoria}/`,
+        `https://projectdjangobakfebrero-production.up.railway.app/producto/editar_categoria/${selectedCategoria.id_categoria}/`,
         {
           method: 'POST',
           body: formData,

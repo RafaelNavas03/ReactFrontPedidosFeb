@@ -12,8 +12,8 @@ const CrearRecompensaProductoForm = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const productosResponse = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/listar/');
-        const recompensasProductosResponse = await fetch('projectdjangobakfebrero-production.up.railway.app/Recompensas/listar_productos_con_recompensas/');
+        const productosResponse = await fetch('https://projectdjangobakfebrero-production.up.railway.app/producto/listar/');
+        const recompensasProductosResponse = await fetch('https://projectdjangobakfebrero-production.up.railway.app/Recompensas/listar_productos_con_recompensas/');
 
         const productosData = await productosResponse.json();
         const recompensasProductosData = await recompensasProductosResponse.json();
@@ -58,7 +58,7 @@ const CrearRecompensaProductoForm = () => {
         }
       }
 
-      const response = await fetch('projectdjangobakfebrero-production.up.railway.app/Recompensas/crear_recompensa_producto/', {
+      const response = await fetch('https://projectdjangobakfebrero-production.up.railway.app/Recompensas/crear_recompensa_producto/', {
         method: 'POST',
         body: formData,
       });
@@ -68,7 +68,7 @@ const CrearRecompensaProductoForm = () => {
         message.success(responseData.mensaje);
         form.resetFields();
         
-        const recompensasProductosResponse = await fetch('projectdjangobakfebrero-production.up.railway.app/Recompensas/listar_productos_con_recompensas/');
+        const recompensasProductosResponse = await fetch('https://projectdjangobakfebrero-production.up.railway.app/Recompensas/listar_productos_con_recompensas/');
         const recompensasProductosData = await recompensasProductosResponse.json();
         
         if (Array.isArray(recompensasProductosData.productos_con_recompensas)) {

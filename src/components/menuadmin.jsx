@@ -53,7 +53,7 @@ const Admin = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('projectdjangobakfebrero-production.up.railway.app/Login/rol/', {
+        const response = await fetch('https://projectdjangobakfebrero-production.up.railway.app/Login/rol/', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

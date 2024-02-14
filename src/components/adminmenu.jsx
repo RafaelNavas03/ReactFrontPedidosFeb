@@ -21,7 +21,7 @@ const AdminMenu = () => {
     const handleShow = () => setShow(true);
     const obtenerInformacionEmpresa = async () => {
         try {
-            const respuesta = await fetch('projectdjangobakfebrero-production.up.railway.app/empresa/infoEmpresa/', {
+            const respuesta = await fetch('https://projectdjangobakfebrero-production.up.railway.app/empresa/infoEmpresa/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ const AdminMenu = () => {
             console.log(datos.empresa_info);
             setEmpresaInfo(datos.empresa_info);
             setLoading(false);
-            fetch('projectdjangobakfebrero-production.up.railway.app/sucursal/sucusarleslist/')
+            fetch('https://projectdjangobakfebrero-production.up.railway.app/sucursal/sucusarleslist/')
                 .then((response) => response.json())
                 .then((data) => {
                     console.log(data.sucursales)
@@ -74,7 +74,7 @@ const AdminMenu = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('projectdjangobakfebrero-production.up.railway.app/Login/rol/', {
+                const response = await fetch('https://projectdjangobakfebrero-production.up.railway.app/Login/rol/', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

@@ -21,23 +21,23 @@ const Inventario = () => {
 
     const cargarInventario = async () => {
         try {
-            const responseInventario = await fetch('projectdjangobakfebrero-production.up.railway.app/Inventario/verinventario/');
+            const responseInventario = await fetch('https://projectdjangobakfebrero-production.up.railway.app/Inventario/verinventario/');
             const dataInventario = await responseInventario.json();
             setInventario(dataInventario.inventario);
 
-            const responseBodegas = await fetch('projectdjangobakfebrero-production.up.railway.app/bodega/listar/');
+            const responseBodegas = await fetch('https://projectdjangobakfebrero-production.up.railway.app/bodega/listar/');
             const dataBodegas = await responseBodegas.json();
             setBodegas(dataBodegas.bodegas);
 
-            const responseProductos = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/listar/');
+            const responseProductos = await fetch('https://projectdjangobakfebrero-production.up.railway.app/producto/listar/');
             const dataProductos = await responseProductos.json();
             setProductos(dataProductos.productos);
 
-            const responseComponentes = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/listarcomponentes/');
+            const responseComponentes = await fetch('https://projectdjangobakfebrero-production.up.railway.app/producto/listarcomponentes/');
             const dataComponentes = await responseComponentes.json();
             setComponentes(dataComponentes.componentes);
 
-            const responseUnidadesMedida = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/listarum/');
+            const responseUnidadesMedida = await fetch('https://projectdjangobakfebrero-production.up.railway.app/producto/listarum/');
             const dataUnidadesMedida = await responseUnidadesMedida.json();
             setUnidadesMedida(dataUnidadesMedida.unidades_medida);
         } catch (error) {
@@ -81,7 +81,7 @@ const Inventario = () => {
             const formData = new FormData();
             formData.append('nuevo_stock_minimo', newStockMinimo);
     
-            const response = await fetch(`projectdjangobakfebrero-production.up.railway.app/Inventario/editar/${id}/`, {
+            const response = await fetch(`https://projectdjangobakfebrero-production.up.railway.app/Inventario/editar/${id}/`, {
                 method: 'POST',
                 body: formData,
             });

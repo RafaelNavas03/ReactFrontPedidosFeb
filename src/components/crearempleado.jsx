@@ -11,7 +11,7 @@ const CrearEmpleadoForm = () => {
     // Obtener la lista de sucursales al cargar el componente
     const fetchSucursales = async () => {
       try {
-        const response = await fetch('projectdjangobakfebrero-production.up.railway.app/sucursal/sucusarleslist/');
+        const response = await fetch('https://projectdjangobakfebrero-production.up.railway.app/sucursal/sucusarleslist/');
         const data = await response.json();
         setSucursales(data.sucursales);
       } catch (error) {
@@ -24,7 +24,7 @@ const CrearEmpleadoForm = () => {
 
   const onFinish = async (values) => {
     try {
-      const response = await fetch('projectdjangobakfebrero-production.up.railway.app/empleado/crear/', {
+      const response = await fetch('https://projectdjangobakfebrero-production.up.railway.app/empleado/crear/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ const CrearEmpleadoForm = () => {
           {
             validator: async (_, value) => {
               try {
-                const response = await fetch('projectdjangobakfebrero-production.up.railway.app/Login/cuentaexist/', {
+                const response = await fetch('https://projectdjangobakfebrero-production.up.railway.app/Login/cuentaexist/', {
                   method: 'POST',
                   headers: {
                     'Content-Type': 'application/json',
@@ -159,7 +159,7 @@ const CrearEmpleadoForm = () => {
           {
             validator: async (_, value) => {
               try {
-                const response = await fetch('projectdjangobakfebrero-production.up.railway.app/Login/phoneExist/', {
+                const response = await fetch('https://projectdjangobakfebrero-production.up.railway.app/Login/phoneExist/', {
                   method: 'POST',
                   headers: {
                     'Content-Type': 'application/json',

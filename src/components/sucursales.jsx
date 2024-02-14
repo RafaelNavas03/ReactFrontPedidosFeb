@@ -57,7 +57,7 @@ const Sucursales = () => {
         setSucursalesData([]);
 
         const { current, pageSize } = pagination;
-        const url = `projectdjangobakfebrero-production.up.railway.app/sucursal/sucusarleslist/?page=${current}&pageSize=${pageSize}`;
+        const url = `https://projectdjangobakfebrero-production.up.railway.app/sucursal/sucusarleslist/?page=${current}&pageSize=${pageSize}`;
 
         fetch(url)
             .then((response) => response.json())
@@ -82,7 +82,7 @@ const Sucursales = () => {
         const formData = new FormData();
         formData.append('id_sucursal', record.id_sucursal);
         formData.append('sestado', checked ? '1' : '0');
-        fetch('projectdjangobakfebrero-production.up.railway.app/sucursal/actsucursal/', {
+        fetch('https://projectdjangobakfebrero-production.up.railway.app/sucursal/actsucursal/', {
             method: 'POST',
             body: formData,
         })
@@ -114,7 +114,7 @@ const Sucursales = () => {
                 formData.append('latitud', latitud);
                 formData.append('longitud', longitud);
 
-                fetch('projectdjangobakfebrero-production.up.railway.app/sucursal/editarubicacion/', {
+                fetch('https://projectdjangobakfebrero-production.up.railway.app/sucursal/editarubicacion/', {
                     method: 'POST',
                     body: formData,
                 })

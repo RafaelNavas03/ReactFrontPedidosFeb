@@ -38,7 +38,7 @@ const EditarAvisos = () => {
 
   const obtenerAvisos = async () => {
     try {
-      const response = await fetch("projectdjangobakfebrero-production.up.railway.app/avisos/avisos/");
+      const response = await fetch("https://projectdjangobakfebrero-production.up.railway.app/avisos/avisos/");
       const data = await response.json();
       if (response.ok) {
         setAvisos(data.avisos_principales);
@@ -89,7 +89,7 @@ const EditarAvisos = () => {
       formData.append("nueva_imagen", nueva_imagen.file);
 
       const response = await fetch(
-        `projectdjangobakfebrero-production.up.railway.app/avisos/editar/${editAvisoId}/`,
+        `https://projectdjangobakfebrero-production.up.railway.app/avisos/editar/${editAvisoId}/`,
         {
           method: "POST",
           body: formData,
