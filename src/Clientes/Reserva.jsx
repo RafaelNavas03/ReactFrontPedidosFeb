@@ -15,7 +15,7 @@ const Reserva = () => {
 
   const obtenerMesas = async () => {
     try {
-      const response = await fetch('projectdjangobakfebrero-production.up.railway.app/Mesas/ver_mesas/');
+      const response = await fetch('http://projectdjangobakfebrero-production.up.railway.app/Mesas/ver_mesas/');
       if (!response.ok) {
         throw new Error('Error al obtener las mesas');
       }
@@ -66,7 +66,7 @@ const Reserva = () => {
       formData.append('hora_reserva', selectedHour);
       formData.append('estado', 'E');  // Ajusta el estado según tus necesidades
 
-      const response = await fetch('projectdjangobakfebrero-production.up.railway.app/Mesas/crear_reservacion/', {
+      const response = await fetch('http://projectdjangobakfebrero-production.up.railway.app/Mesas/crear_reservacion/', {
         method: 'POST',
         body: formData,
       });
