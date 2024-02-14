@@ -19,7 +19,7 @@ const ListProductos =()=>{
 
     useEffect(() => {
         // Realizar la solicitud a la API al montar el componente
-        fetch('projectdjangobakfebrero-production.up.railway.app/producto/listar/')
+        fetch('http://projectdjangobakfebrero-production.up.railway.app/producto/listar/')
           .then(response => response.json())
           .then(data => setProducts(data.productos))
           .catch(error => console.error('Error fetching products:', error));
