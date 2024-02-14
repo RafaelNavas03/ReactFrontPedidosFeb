@@ -120,7 +120,7 @@ const AdminSucursal = ({ idsucursalx }) => {
             formDataObject.append('detalle', JSON.stringify(jsonHorario));
             formDataObject.append('idsucursal', idsucursalx);
 
-            const response = await fetch('http://projectdjangobakfebrero-production.up.railway.app/horarios/CrearHorarioSucursal/', {
+            const response = await fetch('https://projectdjangobakfebrero-production.up.railway.app/horarios/CrearHorarioSucursal/', {
                 method: 'POST',
                 body: formDataObject,
             });
@@ -157,7 +157,7 @@ const AdminSucursal = ({ idsucursalx }) => {
     const fetchHorarioDetails = async (idHorario) => {
         try {
             console.log(idHorario);
-            const response = await fetch('http://projectdjangobakfebrero-production.up.railway.app/horarios/get/' + idHorario);
+            const response = await fetch('https://projectdjangobakfebrero-production.up.railway.app/horarios/get/' + idHorario);
             const data = await response.json();
 
             if (data.detalles) {
@@ -175,7 +175,7 @@ const AdminSucursal = ({ idsucursalx }) => {
 
     const fetchData = async () => {
         try {
-            const response = await fetch(`http://projectdjangobakfebrero-production.up.railway.app/sucursal/cargarSucursal/${idsucursalx}`, {
+            const response = await fetch(`https://projectdjangobakfebrero-production.up.railway.app/sucursal/cargarSucursal/${idsucursalx}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -218,7 +218,7 @@ const AdminSucursal = ({ idsucursalx }) => {
         formData.append('id_sucursal', idsucursalx);
         formData.append('sestado', checked ? '1' : '0');
 
-        fetch('http://projectdjangobakfebrero-production.up.railway.app/sucursal/actsucursal/', {
+        fetch('https://projectdjangobakfebrero-production.up.railway.app/sucursal/actsucursal/', {
             method: 'POST',
             body: formData,
         })
@@ -253,7 +253,7 @@ const AdminSucursal = ({ idsucursalx }) => {
                 console.error('Tipo de archivo no válido');
             }
 
-            const response = await fetch('http://projectdjangobakfebrero-production.up.railway.app/sucursal/EditarSucursal/' + idsucursalx, {
+            const response = await fetch('https://projectdjangobakfebrero-production.up.railway.app/sucursal/EditarSucursal/' + idsucursalx, {
                 method: 'POST',
                 body: formData,
             });
