@@ -286,7 +286,7 @@ const AdminSucursal = ({ idsucursalx }) => {
                 formData.append('latitud', latitud);
                 formData.append('longitud', longitud);
 
-                fetch('http://projectdjangobakfebrero-production.up.railway.app/sucursal/editarubicacion/', {
+                fetch('https://projectdjangobakfebrero-production.up.railway.app/sucursal/editarubicacion/', {
                     method: 'POST',
                     body: formData,
                 })
