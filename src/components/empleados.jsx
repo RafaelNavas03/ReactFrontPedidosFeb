@@ -38,7 +38,7 @@ const Empleados = ({ }) => {
     }, []);
 
     const Sucursallistar = () =>{
-        fetch('http://127.0.0.1:8000/sucursal/sucusarleslist/')
+        fetch('projectdjangobakfebrero-production.up.railway.app/sucursal/sucusarleslist/')
             .then((response) => response.json())
             .then((data) => {
                 setSucursales(data.sucursales);
@@ -60,7 +60,7 @@ const Empleados = ({ }) => {
         setSelectedOficio(value);
     };
     const listarEmpleados=() =>{
-        fetch(`http://127.0.0.1:8000/empleado/listar-empleados/0/`)
+        fetch(`projectdjangobakfebrero-production.up.railway.app/empleado/listar-empleados/0/`)
         .then((response) => response.json())
         .then((data) => {
             setEmpleados(data.empleados);
@@ -75,7 +75,7 @@ const Empleados = ({ }) => {
         setSelectedSucursal(value);
 
         if (value !== 'Todas las sucursales') {
-            fetch(`http://127.0.0.1:8000/empleado/listar-empleados/${encodeURIComponent(value)}/`)
+            fetch(`projectdjangobakfebrero-production.up.railway.app/empleado/listar-empleados/${encodeURIComponent(value)}/`)
                 .then((response) => response.json())
                 .then((data) => {
                     setEmpleados(data.empleados);

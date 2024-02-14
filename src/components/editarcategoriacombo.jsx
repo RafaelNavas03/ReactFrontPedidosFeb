@@ -10,7 +10,7 @@ const EditarCategoriaCombo = ({ onCancel }) => {
 
     const fetchCategoriasCombos = async () => {
         try {
-            const response = await fetch('http://127.0.0.1:8000/combos/listcategoria/');
+            const response = await fetch('projectdjangobakfebrero-production.up.railway.app/combos/listcategoria/');
             const data = await response.json();
             setCategoriasCombos(data.categorias_combos);
         } catch (error) {
@@ -54,7 +54,7 @@ const EditarCategoriaCombo = ({ onCancel }) => {
             }
 
             const response = await fetch(
-                `http://127.0.0.1:8000/combos/editarcategoriacombo/${selectedCategoriaCombo.id_catcombo}/`,
+                `projectdjangobakfebrero-production.up.railway.app/combos/editarcategoriacombo/${selectedCategoriaCombo.id_catcombo}/`,
                 {
                     method: 'POST',
                     body: formData,

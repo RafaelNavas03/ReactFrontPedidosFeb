@@ -60,7 +60,7 @@ const ShoppingCart = () => {
     
   
     if (id_cuenta) {
-      fetch(`http://127.0.0.1:8000/Login/obtener_usuario/${id_cuenta}/`)
+      fetch(`projectdjangobakfebrero-production.up.railway.app/Login/obtener_usuario/${id_cuenta}/`)
         .then(response => response.json())
         .then(data => {
           setUserData(data.usuario);
@@ -177,7 +177,7 @@ const PagarPorEfectivo =()=>{
     formData.append('impuesto', 0);
     formData.append("detalles_pedido", JSON.stringify({ detalles_pedido }));
     // Realiza la solicitud POST al backend
-    fetch(`http://127.0.0.1:8000/cliente/realizar_pedido/${id_cuenta}/`, {
+    fetch(`projectdjangobakfebrero-production.up.railway.app/cliente/realizar_pedido/${id_cuenta}/`, {
       method: 'POST',
       body: formData,
     })
@@ -233,7 +233,7 @@ const PagarPorEfectivo =()=>{
       formData.append('impuesto', 0);
       formData.append("detalles_pedido", JSON.stringify({ detalles_pedido }));
       // Realiza la solicitud POST al backend
-      fetch(`http://127.0.0.1:8000/cliente/realizar_pedido/${id_cuenta}/`, {
+      fetch(`projectdjangobakfebrero-production.up.railway.app/cliente/realizar_pedido/${id_cuenta}/`, {
         method: 'POST',
         body: formData,
       })

@@ -8,7 +8,7 @@ const CrearTipoProducto = () => {
   const onFinish = async (values) => {
     setLoading(true);
     try {
-      const response = await fetch('http://127.0.0.1:8000/producto/creartipop/', {
+      const response = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/creartipop/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ const CrearTipoProducto = () => {
           {
             validator: async (_, value) => {
               try {
-                const response = await fetch('http://127.0.0.1:8000/producto/tipoProductoExist/', {
+                const response = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/tipoProductoExist/', {
                   method: 'POST',
                   headers: {
                     'Content-Type': 'application/json',

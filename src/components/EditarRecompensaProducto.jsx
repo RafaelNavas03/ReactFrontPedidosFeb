@@ -16,7 +16,7 @@ const EditarRecompensaProductoForm = () => {
 
     const fetchRecompensasProductos = async () => {
         try {
-            const response = await fetch('http://127.0.0.1:8000/Recompensas/lista_recompensas_producto/');
+            const response = await fetch('projectdjangobakfebrero-production.up.railway.app/Recompensas/lista_recompensas_producto/');
             if (!response.ok) {
                 throw new Error('Error fetching recompensas de producto');
             }
@@ -34,7 +34,7 @@ const EditarRecompensaProductoForm = () => {
     useEffect(() => {
         const fetchProductos = async () => {
             try {
-                const response = await fetch('http://127.0.0.1:8000/producto/listar/');
+                const response = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/listar/');
                 if (!response.ok) {
                     throw new Error('Error fetching productos');
                 }
@@ -70,7 +70,7 @@ const EditarRecompensaProductoForm = () => {
 
             console.log('Valor del checkbox:', form.getFieldValue('sestado')); // Debugging
 
-            const response = await fetch(`http://127.0.0.1:8000/Recompensas/editar_recompensa_producto/${editedRecompensaProducto.id_recompensa_producto}/`, {
+            const response = await fetch(`projectdjangobakfebrero-production.up.railway.app/Recompensas/editar_recompensa_producto/${editedRecompensaProducto.id_recompensa_producto}/`, {
                 method: 'POST',
                 body: formData,
             });

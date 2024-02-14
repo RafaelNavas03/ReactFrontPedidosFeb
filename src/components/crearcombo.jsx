@@ -41,7 +41,7 @@ const NuevoComboForm = () => {
 
     const fetchProductos = async (page = 1, size = 8, search = '') => {
         try {
-            const response = await fetch(`http://127.0.0.1:8000/producto/listar/?page=${page}&size=${size}&search=${search}`);
+            const response = await fetch(`projectdjangobakfebrero-production.up.railway.app/producto/listar/?page=${page}&size=${size}&search=${search}`);
             if (response.ok) {
                 const data = await response.json();
                 setProductos(data.productos);
@@ -72,7 +72,7 @@ const NuevoComboForm = () => {
         });
     const fetchCategorias = async () => {
         try {
-            const response = await fetch('http://127.0.0.1:8000/combos/listcategoria/');
+            const response = await fetch('projectdjangobakfebrero-production.up.railway.app/combos/listcategoria/');
             if (response.ok) {
                 const data = await response.json();
                 setCategorias(data.categorias_combos);
@@ -132,7 +132,7 @@ const NuevoComboForm = () => {
             console.log(selectedProducts);
             formData.append('detalle_combo', JSON.stringify(detalleCombo));
 
-            const response = await fetch('http://127.0.0.1:8000/combos/crearcombo/', {
+            const response = await fetch('projectdjangobakfebrero-production.up.railway.app/combos/crearcombo/', {
                 method: 'POST',
                 body: formData,
             });
@@ -185,7 +185,7 @@ const NuevoComboForm = () => {
                 formData.append('imagencategoria', values.imagencategoria[0].originFileObj);
             }
 
-            const response = await fetch('http://127.0.0.1:8000/combos/crearcat/', {
+            const response = await fetch('projectdjangobakfebrero-production.up.railway.app/combos/crearcat/', {
                 method: 'POST',
                 body: formData,
             });
@@ -483,7 +483,7 @@ const NuevoComboForm = () => {
                         {
                             validator: async (_, value) => {
                                 try {
-                                    const response = await fetch('http://127.0.0.1:8000/combos/categoriaExist/', {
+                                    const response = await fetch('projectdjangobakfebrero-production.up.railway.app/combos/categoriaExist/', {
                                         method: 'POST',
                                         headers: {
                                             'Content-Type': 'application/json',

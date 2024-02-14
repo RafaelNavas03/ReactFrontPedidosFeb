@@ -43,7 +43,7 @@ const RegistroForm = () => {
         requestBody.longitud = locationData.longitud;
       }
 
-      const response = await fetch('http://127.0.0.1:8000/Login/crear/', {
+      const response = await fetch('projectdjangobakfebrero-production.up.railway.app/Login/crear/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -98,7 +98,7 @@ const RegistroForm = () => {
             {
               validator: async (_, value) => {
                 try {
-                  const response = await fetch('http://127.0.0.1:8000/Login/cuentaexist/', {
+                  const response = await fetch('projectdjangobakfebrero-production.up.railway.app/Login/cuentaexist/', {
                     method: 'POST',
                     headers: {
                       'Content-Type': 'application/json',
@@ -136,7 +136,7 @@ const RegistroForm = () => {
             {
               validator: async (_, value) => {
                 try {
-                  const response = await fetch('http://127.0.0.1:8000/Login/phoneExist/', {
+                  const response = await fetch('projectdjangobakfebrero-production.up.railway.app/Login/phoneExist/', {
                     method: 'POST',
                     headers: {
                       'Content-Type': 'application/json',
@@ -256,7 +256,7 @@ const RegistroForm = () => {
                 {
                   validator: async (_, value) => {
                     try {
-                      const response = await fetch('http://127.0.0.1:8000/Login/DocumentExist/', {
+                      const response = await fetch('projectdjangobakfebrero-production.up.railway.app/Login/DocumentExist/', {
                         method: 'POST',
                         headers: {
                           'Content-Type': 'application/json',

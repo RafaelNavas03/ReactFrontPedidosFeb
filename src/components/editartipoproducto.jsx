@@ -34,7 +34,7 @@ const EditarTipoProducto = () => {
       const formData = new FormData();
       console.log('El valor enviado es :' + idtp);
       formData.append('sestado', '0');
-      const response = await fetch(`http://127.0.0.1:8000/producto/editar_tipo_producto/${idtp}/`, {
+      const response = await fetch(`projectdjangobakfebrero-production.up.railway.app/producto/editar_tipo_producto/${idtp}/`, {
         method: 'POST',
         body: formData,
       });
@@ -55,7 +55,7 @@ const EditarTipoProducto = () => {
 
   const listarp= async ()=>{
     try {
-      fetch('http://127.0.0.1:8000/producto/listarproductos/')
+      fetch('projectdjangobakfebrero-production.up.railway.app/producto/listarproductos/')
         .then((response) => response.json())
         .then((data) => setTiposProductos(data.tipos_productos))
         .catch((error) => console.error('Error fetching tipos de productos:', error));
@@ -140,7 +140,7 @@ const EditarTipoProducto = () => {
         formData.append('descripcion', values.description);
       }
 
-      const response = await fetch(`http://127.0.0.1:8000/producto/editar_tipo_producto/${tipoProductoId}/`, {
+      const response = await fetch(`projectdjangobakfebrero-production.up.railway.app/producto/editar_tipo_producto/${tipoProductoId}/`, {
         method: 'POST',
         body: formData,
       });

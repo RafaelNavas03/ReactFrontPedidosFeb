@@ -13,7 +13,7 @@ const CrearMesa = () => {
         formData.append(key, values[key]);
       });
 
-      const response = await fetch("http://127.0.0.1:8000/Mesas/crear/", {
+      const response = await fetch("projectdjangobakfebrero-production.up.railway.app/Mesas/crear/", {
         method: "POST",
         body: formData,
       });

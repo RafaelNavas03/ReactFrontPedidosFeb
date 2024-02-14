@@ -13,7 +13,7 @@ const EditarRecompensaComboForm = () => {
   useEffect(() => {
     const fetchRecompensasCombos = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/Recompensas/lista_recompensas_combo/');
+        const response = await fetch('projectdjangobakfebrero-production.up.railway.app/Recompensas/lista_recompensas_combo/');
         if (!response.ok) {
           throw new Error('Error fetching recompensas de combo');
         }
@@ -30,7 +30,7 @@ const EditarRecompensaComboForm = () => {
   useEffect(() => {
     const fetchCombos = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/combos/ver_combos/');
+        const response = await fetch('projectdjangobakfebrero-production.up.railway.app/combos/ver_combos/');
         if (!response.ok) {
           throw new Error('Error fetching combos');
         }
@@ -64,7 +64,7 @@ const EditarRecompensaComboForm = () => {
       formData.append('puntos_recompensa_combo', form.getFieldValue('puntos_recompensa_combo'));
       formData.append('sestado', form.getFieldValue('sestado') ? '1' : '0');
 
-      const response = await fetch(`http://127.0.0.1:8000/Recompensas/editar_recompensa_combo/${editedRecompensaCombo.id_recompensa_combo}/`, {
+      const response = await fetch(`projectdjangobakfebrero-production.up.railway.app/Recompensas/editar_recompensa_combo/${editedRecompensaCombo.id_recompensa_combo}/`, {
         method: 'POST',
         body: formData,
       });

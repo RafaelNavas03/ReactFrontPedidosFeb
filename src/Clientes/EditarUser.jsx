@@ -71,7 +71,7 @@ const handleSaveLocation = () => {
 const ObtenerUsuario = async () => {
   
   if (id_cuenta) {
-    fetch(`http://127.0.0.1:8000/Login/obtener_usuario/${id_cuenta}/`)
+    fetch(`projectdjangobakfebrero-production.up.railway.app/Login/obtener_usuario/${id_cuenta}/`)
       .then(response => response.json())
       .then(data => {
         setUserData(data.usuario);
@@ -112,7 +112,7 @@ const ObtenerUsuario = async () => {
       formData.append('ruc_cedula', ruc_cedula);
       formData.append('crazon_social', razon_social);
       const response = await fetch(
-        `http://127.0.0.1:8000/Login/editar_usuario/${id_cuenta}/`,
+        `projectdjangobakfebrero-production.up.railway.app/Login/editar_usuario/${id_cuenta}/`,
         {
           method: "POST",
           body: formData,

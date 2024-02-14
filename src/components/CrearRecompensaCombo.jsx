@@ -14,8 +14,8 @@ const CrearRecompensaComboForm = () => {
 
     const fetchData = async () => {
       try {
-        const combosResponse = await fetch('http://127.0.0.1:8000/combos/ver_combos/');
-        const recompensasCombosResponse = await fetch('http://127.0.0.1:8000/Recompensas/listar_combos_con_recompensas/');
+        const combosResponse = await fetch('projectdjangobakfebrero-production.up.railway.app/combos/ver_combos/');
+        const recompensasCombosResponse = await fetch('projectdjangobakfebrero-production.up.railway.app/Recompensas/listar_combos_con_recompensas/');
         
         if (isMounted) {
           const combosData = await combosResponse.json();
@@ -67,7 +67,7 @@ const CrearRecompensaComboForm = () => {
         }
       }
 
-      const response = await fetch('http://127.0.0.1:8000/Recompensas/crear_recompensa_combo/', {
+      const response = await fetch('projectdjangobakfebrero-production.up.railway.app/Recompensas/crear_recompensa_combo/', {
         method: 'POST',
         body: formData,
       });

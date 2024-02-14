@@ -21,23 +21,23 @@ const Inventario = () => {
 
     const cargarInventario = async () => {
         try {
-            const responseInventario = await fetch('http://127.0.0.1:8000/Inventario/verinventario/');
+            const responseInventario = await fetch('projectdjangobakfebrero-production.up.railway.app/Inventario/verinventario/');
             const dataInventario = await responseInventario.json();
             setInventario(dataInventario.inventario);
 
-            const responseBodegas = await fetch('http://127.0.0.1:8000/bodega/listar/');
+            const responseBodegas = await fetch('projectdjangobakfebrero-production.up.railway.app/bodega/listar/');
             const dataBodegas = await responseBodegas.json();
             setBodegas(dataBodegas.bodegas);
 
-            const responseProductos = await fetch('http://127.0.0.1:8000/producto/listar/');
+            const responseProductos = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/listar/');
             const dataProductos = await responseProductos.json();
             setProductos(dataProductos.productos);
 
-            const responseComponentes = await fetch('http://127.0.0.1:8000/producto/listarcomponentes/');
+            const responseComponentes = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/listarcomponentes/');
             const dataComponentes = await responseComponentes.json();
             setComponentes(dataComponentes.componentes);
 
-            const responseUnidadesMedida = await fetch('http://127.0.0.1:8000/producto/listarum/');
+            const responseUnidadesMedida = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/listarum/');
             const dataUnidadesMedida = await responseUnidadesMedida.json();
             setUnidadesMedida(dataUnidadesMedida.unidades_medida);
         } catch (error) {
@@ -81,7 +81,7 @@ const Inventario = () => {
             const formData = new FormData();
             formData.append('nuevo_stock_minimo', newStockMinimo);
     
-            const response = await fetch(`http://127.0.0.1:8000/Inventario/editar/${id}/`, {
+            const response = await fetch(`projectdjangobakfebrero-production.up.railway.app/Inventario/editar/${id}/`, {
                 method: 'POST',
                 body: formData,
             });

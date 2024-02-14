@@ -56,7 +56,7 @@ const EditarProducto = () => {
 
     const fetchSucursal = () => {
         setSucursalesData([]);
-        const url = `http://127.0.0.1:8000/sucursal/sucusarleslist/`;
+        const url = `projectdjangobakfebrero-production.up.railway.app/sucursal/sucusarleslist/`;
         fetch(url)
             .then((response) => response.json())
             .then((data) => {
@@ -76,7 +76,7 @@ const EditarProducto = () => {
                     const formDataObject = new FormData();
                     formDataObject.append('detalle', JSON.stringify(jsonHorario));
 
-                    const response = await fetch('http://127.0.0.1:8000/horarios/edit/' + selectedHorario.id_horarios, {
+                    const response = await fetch('projectdjangobakfebrero-production.up.railway.app/horarios/edit/' + selectedHorario.id_horarios, {
                         method: 'POST',
                         body: formDataObject,
                     });
@@ -113,7 +113,7 @@ const EditarProducto = () => {
             formDataObject.append('detalle', JSON.stringify(jsonHorario));
             formDataObject.append('idsucursal', selectedSucursal);
             formDataObject.append('idproducto', selectedProducto.id_producto);
-            const response = await fetch('http://127.0.0.1:8000/horarios/CrearHorarioProducto/', {
+            const response = await fetch('projectdjangobakfebrero-production.up.railway.app/horarios/CrearHorarioProducto/', {
                 method: 'POST',
                 body: formDataObject,
             });
@@ -168,7 +168,7 @@ const EditarProducto = () => {
             formDataObject.append('id_sucursal', selectedSucursal);
 
 
-            const response = await fetch('http://127.0.0.1:8000/producto/editarproducto/' + productId + '/', {
+            const response = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/editarproducto/' + productId + '/', {
                 method: 'POST',
                 body: formDataObject,
             });
@@ -210,7 +210,7 @@ const EditarProducto = () => {
 
     const fetchproducto = async (page) => {
         try {
-            const response = await fetch(`http://127.0.0.1:8000/producto/listar/?page=${page}`);
+            const response = await fetch(`projectdjangobakfebrero-production.up.railway.app/producto/listar/?page=${page}`);
             const data = await response.json();
             setProductos(data.productos);
             setTotal(data.total);
@@ -227,7 +227,7 @@ const EditarProducto = () => {
     useEffect(() => {
         const fetchUmList = async () => {
             try {
-                const response = await fetch('http://127.0.0.1:8000/producto/listarum/');
+                const response = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/listarum/');
                 const data = await response.json();
                 setUmList(data.unidades_medida);
             } catch (error) {
@@ -237,7 +237,7 @@ const EditarProducto = () => {
 
         const fetchCategoriaList = async () => {
             try {
-                const response = await fetch('http://127.0.0.1:8000/producto/listar_categorias/');
+                const response = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/listar_categorias/');
                 const data = await response.json();
                 setCategoriaList(data.categorias);
             } catch (error) {
@@ -283,7 +283,7 @@ const EditarProducto = () => {
     const fetchHorarioDetails = async (idHorario) => {
         try {
             console.log(idHorario);
-            const response = await fetch('http://127.0.0.1:8000/horarios/get/' + idHorario);
+            const response = await fetch('projectdjangobakfebrero-production.up.railway.app/horarios/get/' + idHorario);
             const data = await response.json();
 
             if (data.detalles) {
@@ -312,7 +312,7 @@ const EditarProducto = () => {
                 formData.append('imagenp', imagenpInput[0].originFileObj);
             }
 
-            const response = await fetch(`http://127.0.0.1:8000/producto/editarproducto/${productId}/`, {
+            const response = await fetch(`projectdjangobakfebrero-production.up.railway.app/producto/editarproducto/${productId}/`, {
                 method: 'POST',
                 body: formData,
             });

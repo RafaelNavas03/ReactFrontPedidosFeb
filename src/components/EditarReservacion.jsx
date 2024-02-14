@@ -45,7 +45,7 @@ const EditarReservacionesForm = () => {
 
   const cargarReservaciones = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:8000/Mesas/listar_reservaciones/');
+      const response = await fetch('projectdjangobakfebrero-production.up.railway.app/Mesas/listar_reservaciones/');
       if (!response.ok) {
         throw new Error('Error al obtener la lista de reservaciones');
       }
@@ -90,7 +90,7 @@ const EditarReservacionesForm = () => {
       const idReservacion = editingReservacion.id_reservacion;
   
       console.log('Enviando solicitud de edición...');
-      const response = await fetch(`http://127.0.0.1:8000/Mesas/editar_reservacion/${idReservacion}/`, {
+      const response = await fetch(`projectdjangobakfebrero-production.up.railway.app/Mesas/editar_reservacion/${idReservacion}/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

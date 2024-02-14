@@ -52,21 +52,21 @@ const EditarBodegaForm = () => {
       try {
         // Obtener lista de proveedores
         const responseProveedores = await fetch(
-          "http://127.0.0.1:8000/Proveedores/listar_proveedor/"
+          "projectdjangobakfebrero-production.up.railway.app/Proveedores/listar_proveedor/"
         );
         const dataProveedores = await responseProveedores.json();
         setProveedores(dataProveedores.proveedores);
 
         // Obtener lista de componentes
         const responseComponentes = await fetch(
-          "http://127.0.0.1:8000/producto/listarcomponentes/"
+          "projectdjangobakfebrero-production.up.railway.app/producto/listarcomponentes/"
         );
         const dataComponentes = await responseComponentes.json();
         setComponentes(dataComponentes.componentes);
 
         // Obtener lista de unidades de medida
         const responseUnidadesMedida = await fetch(
-          "http://127.0.0.1:8000/producto/listarum/"
+          "projectdjangobakfebrero-production.up.railway.app/producto/listarum/"
         );
         const dataUnidadesMedida = await responseUnidadesMedida.json();
         setUnidadesMedida(dataUnidadesMedida.unidades_medida);
@@ -81,7 +81,7 @@ const EditarBodegaForm = () => {
     const obtenerProductos = async () => {
       try {
         const responseProductos = await fetch(
-          "http://127.0.0.1:8000/producto/listar/"
+          "projectdjangobakfebrero-production.up.railway.app/producto/listar/"
         );
         const dataProductos = await responseProductos.json();
         setProductos(dataProductos.productos);
@@ -139,7 +139,7 @@ const EditarBodegaForm = () => {
       const valores = await form.validateFields();
       const idBodega = editingBodega.id_bodega; // Cambiado a id_bodega
 
-      await fetch(`http://127.0.0.1:8000/bodega/editar/${idBodega}/`, {
+      await fetch(`projectdjangobakfebrero-production.up.railway.app/bodega/editar/${idBodega}/`, {
         method: "POST",
         body: new URLSearchParams({
           nombrebog: valores.nombrebog,
@@ -167,7 +167,7 @@ const EditarBodegaForm = () => {
   const cargarBodegas = async () => {
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/bodega/listar/?page=${currentPage}`
+        `projectdjangobakfebrero-production.up.railway.app/bodega/listar/?page=${currentPage}`
       );
       const data = await response.json();
       setBodegas(data.bodegas);

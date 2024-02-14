@@ -23,7 +23,7 @@ const CrearComponenteForm = () => {
   useEffect(() => {
     const fetchComponentes = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/producto/listarcomponentes/');
+        const response = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/listarcomponentes/');
         if (response.ok) {
           const data = await response.json();
           const componentesWithDefaultCosto = data.componentes.map((componente) => ({
@@ -45,7 +45,7 @@ const CrearComponenteForm = () => {
 
     const fetchCategorias = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/producto/listar_categorias/');
+        const response = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/listar_categorias/');
         if (response.ok) {
           const data = await response.json();
           setCategorias(data.categorias);
@@ -61,7 +61,7 @@ const CrearComponenteForm = () => {
 
     const fetchUnidadesMedida = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/producto/listarum/');
+        const response = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/listarum/');
         if (response.ok) {
           const data = await response.json();
           setUnidadesMedida(data.unidades_medida);
@@ -99,7 +99,7 @@ const CrearComponenteForm = () => {
       formDataObject.append('tipo', values.tipo);
       formDataObject.append('id_um', values.id_um);
       formDataObject.append('id_categoria', values.id_categoria);
-      const response = await fetch('http://127.0.0.1:8000/producto/crearcomponente/', {
+      const response = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/crearcomponente/', {
         method: 'POST',
         body: formDataObject,
       });

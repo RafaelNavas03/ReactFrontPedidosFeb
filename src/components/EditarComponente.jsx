@@ -26,7 +26,7 @@ const EditarComponenteForm = () => {
 
   const fetchCategorias = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:8000/producto/listar_categorias/');
+      const response = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/listar_categorias/');
       if (response.ok) {
         const data = await response.json();
         setCategorias(data.categorias);
@@ -44,7 +44,7 @@ const EditarComponenteForm = () => {
       const formDataObject = new FormData();
       formDataObject.append('id_componente', rec.id_componente);
       console.log(rec.id_componente);
-      const response = await fetch('http://127.0.0.1:8000/producto/eliminarcomponente/', {
+      const response = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/eliminarcomponente/', {
         method: 'POST',
         body: formDataObject,
       });
@@ -80,7 +80,7 @@ const EditarComponenteForm = () => {
 
   const fetchComponentes = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:8000/producto/listarcomponentes/');
+      const response = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/listarcomponentes/');
       if (response.ok) {
         const data = await response.json();
         setComponentes(data.componentes);
@@ -100,7 +100,7 @@ const EditarComponenteForm = () => {
 
     const fetchUnidadesMedida = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/producto/listarum/');
+        const response = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/listarum/');
         if (response.ok) {
           const data = await response.json();
           setUnidadesMedida(data.unidades_medida);
@@ -249,7 +249,7 @@ const EditarComponenteForm = () => {
         formDataObject.append('detalle_comp', detallecomponente);
         formDataObject.append('cantidad', values.cantidad);
       }
-      const response = await fetch(`http://127.0.0.1:8000/producto/editarcomponente/${editComponente.id_componente}/`, {
+      const response = await fetch(`projectdjangobakfebrero-production.up.railway.app/producto/editarcomponente/${editComponente.id_componente}/`, {
         method: 'POST',
         body: formDataObject,
       });

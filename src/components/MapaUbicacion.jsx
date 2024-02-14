@@ -17,7 +17,7 @@ const MapComponent = () => {
 
   useEffect(() => {
     // Realizar la llamada a la API y actualizar el estado con las sucursales
-    fetch('http://127.0.0.1:8000/sucursal/sucusarleslist/')
+    fetch('projectdjangobakfebrero-production.up.railway.app/sucursal/sucusarleslist/')
       .then(response => response.json())
       .then(data => {
         setSucursales(data.sucursales);

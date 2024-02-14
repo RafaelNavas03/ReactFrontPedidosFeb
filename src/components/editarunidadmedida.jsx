@@ -24,7 +24,7 @@ const EditarUnidadesMedida = () => {
 
   const fetchUnidadesMedida = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:8000/producto/listarum/');
+      const response = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/listarum/');
       const data = await response.json();
       setUnidadesMedida(data.unidades_medida);
     } catch (error) {
@@ -56,7 +56,7 @@ const EditarUnidadesMedida = () => {
       console.log('B');
       formData.append('sestado', 0);
       console.log('C');
-      const response = await fetch(`http://127.0.0.1:8000/producto/editarum/${idca}/`, {
+      const response = await fetch(`projectdjangobakfebrero-production.up.railway.app/producto/editarum/${idca}/`, {
         method: 'POST',
         body: formData,
       });
@@ -78,7 +78,7 @@ const EditarUnidadesMedida = () => {
       const formData = new FormData();
       formData.append('nombreum', values.nombre_um);
 
-      const response = await fetch(`http://127.0.0.1:8000/producto/editarum/${selectedUnidad.id_um}/`, {
+      const response = await fetch(`projectdjangobakfebrero-production.up.railway.app/producto/editarum/${selectedUnidad.id_um}/`, {
         method: 'POST',
         body: formData,
       });

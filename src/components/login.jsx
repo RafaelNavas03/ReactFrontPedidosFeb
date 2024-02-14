@@ -6,7 +6,7 @@ const LoginForm = ({ onLogin }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8000/Login/rol/", {
+        const response = await fetch("projectdjangobakfebrero-production.up.railway.app/Login/rol/", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -43,7 +43,7 @@ const LoginForm = ({ onLogin }) => {
   const onFinish = async (values) => {
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/Login/iniciar_sesion/",
+        "projectdjangobakfebrero-production.up.railway.app/Login/iniciar_sesion/",
         {
           method: "POST",
           headers: {
@@ -76,7 +76,7 @@ const LoginForm = ({ onLogin }) => {
         onLogin(data);
 
         // Después de que el usuario ha iniciado sesión, realiza la redirección
-        const rolResponse = await fetch("http://127.0.0.1:8000/Login/rol/", {
+        const rolResponse = await fetch("projectdjangobakfebrero-production.up.railway.app/Login/rol/", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

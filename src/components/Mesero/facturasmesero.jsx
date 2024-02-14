@@ -19,7 +19,7 @@ const FacturasMesero = () => {
 
   const fetchMesas = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:8000/Mesas/ver_mesas/");
+      const response = await fetch("projectdjangobakfebrero-production.up.railway.app/Mesas/ver_mesas/");
       if (!response.ok) {
         throw new Error("No se pudo obtener la lista de mesas.");
       }
@@ -37,7 +37,7 @@ const FacturasMesero = () => {
   const handleMesaClick = async (idMesa) => {
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/Mesero/mesero/mesa/${idMesa}/pedidos/`
+        `projectdjangobakfebrero-production.up.railway.app/Mesero/mesero/mesa/${idMesa}/pedidos/`
       );
       if (!response.ok) {
         throw new Error("No se pudo obtener los pedidos de la mesa.");
@@ -54,7 +54,7 @@ const FacturasMesero = () => {
   const handleVerFacturaClick = async (idPedido) => {
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/Mesero/ver_factura/${idPedido}/`
+        `projectdjangobakfebrero-production.up.railway.app/Mesero/ver_factura/${idPedido}/`
       );
       if (!response.ok) {
         throw new Error("No se pudo obtener la factura del pedido.");

@@ -10,7 +10,7 @@ const Carrusel=() =>{
     // Función para obtener los avisos principales de la API
     const fetchAvisosPrincipales = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/avisos/avisos/');
+        const response = await fetch('projectdjangobakfebrero-production.up.railway.app/avisos/avisos/');
         const data = await response.json();
         setAvisos(data.avisos_principales);
       } catch (error) {

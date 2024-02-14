@@ -19,7 +19,7 @@ const VerFacturaMesero = ({ facturaData }) => {
 
   const fetchProductos = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:8000/producto/listar/");
+      const response = await fetch("projectdjangobakfebrero-production.up.railway.app/producto/listar/");
       if (!response.ok) {
         throw new Error("No se pudo obtener la lista de productos.");
       }
@@ -32,7 +32,7 @@ const VerFacturaMesero = ({ facturaData }) => {
 
   const fetchCombos = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:8000/combos/ver_combos/");
+      const response = await fetch("projectdjangobakfebrero-production.up.railway.app/combos/ver_combos/");
       if (!response.ok) {
         throw new Error("No se pudo obtener la lista de combos.");
       }
@@ -46,7 +46,7 @@ const VerFacturaMesero = ({ facturaData }) => {
   const fetchEmpresaInfo = async () => {
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/empresa/infoEmpresa/",
+        "projectdjangobakfebrero-production.up.railway.app/empresa/infoEmpresa/",
         {
           method: "POST",
           headers: {
@@ -73,7 +73,7 @@ const VerFacturaMesero = ({ facturaData }) => {
   const fetchClienteData = async () => {
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/cliente/ver_clientes/"
+        "projectdjangobakfebrero-production.up.railway.app/cliente/ver_clientes/"
       );
       if (!response.ok) {
         throw new Error("No se pudo obtener la lista de clientes.");

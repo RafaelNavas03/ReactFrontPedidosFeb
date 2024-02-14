@@ -42,7 +42,7 @@ const MenuComandas = () => {
     }, [pedidos]);
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/bodega/listar/')
+        fetch('projectdjangobakfebrero-production.up.railway.app/bodega/listar/')
             .then(response => response.json())
             .then(data => {
                 setBodegas(data.bodegas);
@@ -80,7 +80,7 @@ const MenuComandas = () => {
             formData.append('id_pedido', idp);
 
             // Realizar la solicitud a tu endpoint con FormData
-            const response = await fetch('http://127.0.0.1:8000/producto/procesar_productos/', {
+            const response = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/procesar_productos/', {
                 method: 'POST',
                 body: formData,
             });
@@ -105,7 +105,7 @@ const MenuComandas = () => {
     };
     const obtenerPedidos = async () => {
         try {
-            const response = await fetch('http://127.0.0.1:8000/Mesero/pedidos/');
+            const response = await fetch('projectdjangobakfebrero-production.up.railway.app/Mesero/pedidos/');
             const data = await response.json();
             const pedidosOrdenados = data.pedidos.sort((a, b) => new Date(b.fecha_pedido) - new Date(a.fecha_pedido));
             setPedidos(pedidosOrdenados);
@@ -130,7 +130,7 @@ const MenuComandas = () => {
 
     const obtenerInformacionEmpresa = async () => {
         try {
-            const respuesta = await fetch('http://127.0.0.1:8000/empresa/infoEmpresa/', {
+            const respuesta = await fetch('projectdjangobakfebrero-production.up.railway.app/empresa/infoEmpresa/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -147,7 +147,7 @@ const MenuComandas = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://127.0.0.1:8000/Login/rol/', {
+                const response = await fetch('projectdjangobakfebrero-production.up.railway.app/Login/rol/', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

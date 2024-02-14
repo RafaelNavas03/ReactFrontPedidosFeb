@@ -38,7 +38,7 @@ const Bodegas = () => {
 
     const fetchBodegas = async () => {
         try {
-            const response = await fetch('http://127.0.0.1:8000/bodega/listar/');
+            const response = await fetch('projectdjangobakfebrero-production.up.railway.app/bodega/listar/');
             const data = await response.json();
             setBodegas(data.bodegas);
         } catch (error) {

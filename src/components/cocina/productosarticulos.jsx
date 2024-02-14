@@ -11,7 +11,7 @@ const ProductosCocina = ({ idcategoria }) => {
 
     const listarProductos = async () => {
         try {
-            const responseProductos = await fetch('http://127.0.0.1:8000/producto/listar/');
+            const responseProductos = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/listar/');
             const data = await responseProductos.json();
 
             if (data && Array.isArray(data.productos)) {
@@ -34,7 +34,7 @@ const ProductosCocina = ({ idcategoria }) => {
     const listarComponentes = async () => {
         try {
             // Obtener todos los componentes de la API
-            const responseComponentes = await fetch('http://127.0.0.1:8000/producto/listarcomponentes/');
+            const responseComponentes = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/listarcomponentes/');
             const data = await responseComponentes.json();
 
             if (data && Array.isArray(data.componentes)) {

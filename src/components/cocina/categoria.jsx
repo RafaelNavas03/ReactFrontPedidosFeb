@@ -15,7 +15,7 @@ const CategoriaCocina = ({ id_tipoproducto }) => {
 
     const listarp = async () => {
         try {
-            let url = 'http://127.0.0.1:8000/producto/listar_categorias/';
+            let url = 'projectdjangobakfebrero-production.up.railway.app/producto/listar_categorias/';
 
             const responseCategorias = await fetch(url);
             const data = await responseCategorias.json();

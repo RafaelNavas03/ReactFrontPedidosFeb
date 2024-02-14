@@ -21,7 +21,7 @@ const CrearInventario = () => {
   useEffect(() => {
     const fetchSucursales = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/sucursal/sucusarleslist/');
+        const response = await fetch('projectdjangobakfebrero-production.up.railway.app/sucursal/sucusarleslist/');
         const data = await response.json();
         setSucursales(data.sucursales);
       } catch (error) {
@@ -37,7 +37,7 @@ const CrearInventario = () => {
     const fetchBodegas = async () => {
       if (selectedSucursal) {
         try {
-          const response = await fetch(`http://127.0.0.1:8000/bodega/listar/?id_sucursal=${selectedSucursal}`);
+          const response = await fetch(`projectdjangobakfebrero-production.up.railway.app/bodega/listar/?id_sucursal=${selectedSucursal}`);
           const data = await response.json();
           setBodegas(data.bodegas);
         } catch (error) {
@@ -54,7 +54,7 @@ const CrearInventario = () => {
   useEffect(() => {
     const fetchBodegas = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/bodega/listar/');
+        const response = await fetch('projectdjangobakfebrero-production.up.railway.app/bodega/listar/');
         const data = await response.json();
         setBodegas(data.bodegas);
       } catch (error) {
@@ -64,7 +64,7 @@ const CrearInventario = () => {
 
     const fetchProductos = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/producto/listar/');
+        const response = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/listar/');
         const data = await response.json();
         setProductos(data.productos);
       } catch (error) {
@@ -74,7 +74,7 @@ const CrearInventario = () => {
 
     const fetchComponentes = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/producto/listarcomponentes/');
+        const response = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/listarcomponentes/');
         const data = await response.json();
         setComponentes(data.componentes);
       } catch (error) {
@@ -84,7 +84,7 @@ const CrearInventario = () => {
 
     const fetchUnidadesMedida = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/producto/listarum/');
+        const response = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/listarum/');
         const data = await response.json();
         setUnidadesMedida(data.unidades_medida);
       } catch (error) {
@@ -120,7 +120,7 @@ const CrearInventario = () => {
   
       formData.append('stock_minimo', values.stock_minimo);
   
-      const response = await fetch('http://127.0.0.1:8000/Inventario/crearinventario/', {
+      const response = await fetch('projectdjangobakfebrero-production.up.railway.app/Inventario/crearinventario/', {
         method: 'POST',
         body: formData,
       });

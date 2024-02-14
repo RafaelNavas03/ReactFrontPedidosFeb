@@ -57,7 +57,7 @@ const PagosE = ({ }) => {
     }, []);
     const tipoPagData = async () => {
         try {
-            const response = await fetch("http://127.0.0.1:8000/pagos/tipodepagos/");
+            const response = await fetch("projectdjangobakfebrero-production.up.railway.app/pagos/tipodepagos/");
             if (response.ok) {
                 const result = await response.json();
                 setTipoPagos(result.tipopagos);
@@ -72,7 +72,7 @@ const PagosE = ({ }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("http://127.0.0.1:8000/empleado/listar-empleados2/0/");
+                const response = await fetch("projectdjangobakfebrero-production.up.railway.app/empleado/listar-empleados2/0/");
                 if (response.ok) {
                     const result = await response.json();
                     setEmpleados(result.empleados);
@@ -90,7 +90,7 @@ const PagosE = ({ }) => {
     }, []);
     const pagosAct = async () => {
         try {
-            const response = await fetch("http://127.0.0.1:8000/pagos/ConsultarPagos/");
+            const response = await fetch("projectdjangobakfebrero-production.up.railway.app/pagos/ConsultarPagos/");
             if (response.ok) {
                 const result = await response.json();
                 setPagos(result.pagos);
@@ -114,7 +114,7 @@ const PagosE = ({ }) => {
             formData.append('rol', selectedEmployee.tipo);
 
             // Realizar la solicitud POST a la API Django con fetch
-            const response = await fetch('http://127.0.0.1:8000/pagos/CrearPago/', {
+            const response = await fetch('projectdjangobakfebrero-production.up.railway.app/pagos/CrearPago/', {
                 method: 'POST',
                 body: formData,
             });

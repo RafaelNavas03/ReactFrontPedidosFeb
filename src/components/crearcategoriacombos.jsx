@@ -36,7 +36,7 @@ const CrearCategoriaCombos = () => {
         formData.append('imagencategoria', values.imagencategoria[0].originFileObj);
       }
   
-      const response = await fetch('http://127.0.0.1:8000/combos/crearcat/', {
+      const response = await fetch('projectdjangobakfebrero-production.up.railway.app/combos/crearcat/', {
         method: 'POST',
         body: formData,
       });

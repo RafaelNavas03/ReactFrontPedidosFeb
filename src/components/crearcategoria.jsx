@@ -34,7 +34,7 @@ const CrearCategoria = () => {
 
 
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/producto/listatiposycategorias/')
+    fetch('projectdjangobakfebrero-production.up.railway.app/producto/listatiposycategorias/')
       .then(response => response.json())
       .then(data => setTiposYCategorias(data.tipos_y_categorias))
       .catch(error => console.error('Error al obtener tipos y categorías:', error));
@@ -67,7 +67,7 @@ const CrearCategoria = () => {
       }
       formData.append('imagencategoria', imagenCategoria);
 
-      const response = await fetch('http://127.0.0.1:8000/producto/crearcategoria/', {
+      const response = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/crearcategoria/', {
         method: 'POST',
         body: formData,
       });
@@ -140,7 +140,7 @@ const CrearCategoria = () => {
             {
               validator: async (_, value) => {
                 try {
-                  const response = await fetch('http://127.0.0.1:8000/producto/categoriaExist/', {
+                  const response = await fetch('projectdjangobakfebrero-production.up.railway.app/producto/categoriaExist/', {
                     method: 'POST',
                     headers: {
                       'Content-Type': 'application/json',
