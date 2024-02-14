@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Form, Input, Button, Table, Select, Switch, message, notification, Modal, Upload, Card, Tooltip, Watermark, Badge, Tag, Divider, Drawer, Segmented, Avatar } from 'antd';
+import { Form, Input, Button, Table, Select, Switch,message , notification, Modal, Upload, Card, Tooltip, Watermark, Badge, Tag, Divider, Drawer, Segmented, Avatar } from 'antd';
 import { Row, Col } from 'react-bootstrap';
-import { UploadOutlined, EditFilled, UserOutlined, RadarChartOutlined } from '@ant-design/icons';
+import { UploadOutlined, EditFilled, UserOutlined } from '@ant-design/icons';
 import MapaActual from './mapaactual';
 import CrearHorariosSemanales from './crearhorarioS';
 import TextArea from 'antd/es/input/TextArea';
@@ -13,8 +13,6 @@ import cocinero from './res/cocinero.png';
 import anadir from './res/anadir.png'
 import EditarEmpleado from './EditarEmpleado';
 import CrearEmpleadoForm from './crearempleado';
-import Geosector from './geosector';
-
 
 const { Option } = Select;
 
@@ -33,50 +31,10 @@ const AdminSucursal = ({ idsucursalx }) => {
     const [openu, setOpenu] = useState(false);
     const [selectedOficio, setSelectedOficio] = useState('Administradores');
     const [opene, setOpene] = useState(false);
-    const [datosGeosector, setGeosector] = useState(null);
-    const [valorGeo, setvalorGeo] = useState(false);
-
-    const editGeosector = async (datosGeosectorjson) => {
-        try {
-            console.log('Lllega algo:');
-            console.log(datosGeosector);
-            const formDataObject = new FormData();
-            formDataObject.append('datosGeosector', JSON.stringify(datosGeosectorjson));
-            formDataObject.append('secnombre','Sectorid:'+idsucursalx );
-            formDataObject.append('secdescripcion','Sector de atencion' );
-            formDataObject.append('id_sucursal',idsucursalx );
-
-            const response = await fetch('https://projectdjangobakfebrero-production.up.railway.app/sucursal/crearGeosector/', {
-                method: 'POST',
-                body: formDataObject,
-            });
-            
-
-            const responseData = await response.json();
-
-            if (responseData.mensaje) {
-                notification.success({
-                    message: 'Éxito',
-                    description: 'Zona de cobertura editada exitosamente',
-                });
-            } else {
-                notification.error({
-                    message: 'Error',
-                    description: 'Error al editar el horario: ' + responseData.error,
-                });
-            }
-        } catch (error) {
-            notification.error({
-                message: 'Error',
-                description: 'Error al validar el formulario:'+error,
-            });
-        }
-    };
 
     const showDrawere = () => {
         setOpene(true);
     };
-    
 
     const onClosee = () => {
         setSelectedOficio('Administradores');
@@ -122,7 +80,7 @@ const AdminSucursal = ({ idsucursalx }) => {
             const formDataObject = new FormData();
             formDataObject.append('detalle', JSON.stringify(jsonHorario));
 
-            const response = await fetch('https://projectdjangobakfebrero-production.up.railway.app/horarios/edit/' + idhorario, {
+            const response = await fetch('http://projectdjangobakfebrero-production.up.railway.app/horarios/edit/' + idhorario, {
                 method: 'POST',
                 body: formDataObject,
             });
@@ -151,13 +109,6 @@ const AdminSucursal = ({ idsucursalx }) => {
         }
     };
 
-    const saveGeosector = async (jsondetalle) => {
-        setGeosector(jsondetalle);
-        console.log('llego algo aquí?:');
-        console.log(jsondetalle);
-        editGeosector(jsondetalle);
-      }
-
 
     const handleHorarioCreate = async (jsonHorario) => {
         try {
@@ -169,7 +120,7 @@ const AdminSucursal = ({ idsucursalx }) => {
             formDataObject.append('detalle', JSON.stringify(jsonHorario));
             formDataObject.append('idsucursal', idsucursalx);
 
-            const response = await fetch('https://projectdjangobakfebrero-production.up.railway.app/horarios/CrearHorarioSucursal/', {
+            const response = await fetch('http://projectdjangobakfebrero-production.up.railway.app/horarios/CrearHorarioSucursal/', {
                 method: 'POST',
                 body: formDataObject,
             });
@@ -206,7 +157,7 @@ const AdminSucursal = ({ idsucursalx }) => {
     const fetchHorarioDetails = async (idHorario) => {
         try {
             console.log(idHorario);
-            const response = await fetch('https://projectdjangobakfebrero-production.up.railway.app/horarios/get/' + idHorario);
+            const response = await fetch('http://projectdjangobakfebrero-production.up.railway.app/horarios/get/' + idHorario);
             const data = await response.json();
 
             if (data.detalles) {
@@ -224,7 +175,7 @@ const AdminSucursal = ({ idsucursalx }) => {
 
     const fetchData = async () => {
         try {
-            const response = await fetch(`https://projectdjangobakfebrero-production.up.railway.app/sucursal/cargarSucursal/${idsucursalx}`, {
+            const response = await fetch(`http://projectdjangobakfebrero-production.up.railway.app/sucursal/cargarSucursal/${idsucursalx}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -236,9 +187,6 @@ const AdminSucursal = ({ idsucursalx }) => {
 
                 setLoading(false);
                 setSucursalData(data.mensaje[0]);
-                if(data.mensaje[0].id_geosector && data.mensaje[0].id_geosector.ubicaciones_geosector){
-                    setvalorGeo(data.mensaje[0].id_geosector.ubicaciones_geosector);
-                }
 
             } else {
                 console.error('No se encontraron datos de la sucursal');
@@ -246,6 +194,7 @@ const AdminSucursal = ({ idsucursalx }) => {
             }
             fetchHorarioDetails(data.mensaje[0].id_horarios);
             sethorarioid(data.mensaje[0].id_horarios);
+
             setFileList([
                 {
                     uid: '-1',
@@ -269,7 +218,7 @@ const AdminSucursal = ({ idsucursalx }) => {
         formData.append('id_sucursal', idsucursalx);
         formData.append('sestado', checked ? '1' : '0');
 
-        fetch('https://projectdjangobakfebrero-production.up.railway.app/sucursal/actsucursal/', {
+        fetch('http://projectdjangobakfebrero-production.up.railway.app/sucursal/actsucursal/', {
             method: 'POST',
             body: formData,
         })
@@ -304,7 +253,7 @@ const AdminSucursal = ({ idsucursalx }) => {
                 console.error('Tipo de archivo no válido');
             }
 
-            const response = await fetch('https://projectdjangobakfebrero-production.up.railway.app/sucursal/EditarSucursal/' + idsucursalx, {
+            const response = await fetch('http://projectdjangobakfebrero-production.up.railway.app/sucursal/EditarSucursal/' + idsucursalx, {
                 method: 'POST',
                 body: formData,
             });
@@ -337,7 +286,7 @@ const AdminSucursal = ({ idsucursalx }) => {
                 formData.append('latitud', latitud);
                 formData.append('longitud', longitud);
 
-                fetch('https://projectdjangobakfebrero-production.up.railway.app/sucursal/editarubicacion/', {
+                fetch('http://projectdjangobakfebrero-production.up.railway.app/sucursal/editarubicacion/', {
                     method: 'POST',
                     body: formData,
                 })
@@ -785,18 +734,9 @@ const AdminSucursal = ({ idsucursalx }) => {
                             onChange={handleOficioChange}
                         />
                     </Col>
-                    <Col md={12}>
-                        <EditarEmpleado idsucur={idsucursalx} oficio={selectedOficio}></EditarEmpleado>
-                    </Col>
-                    
                 </Row>
-
+                <EditarEmpleado idsucur={idsucursalx} oficio={selectedOficio}></EditarEmpleado>
             </Row>
-            <Divider>Zona de cobertura</Divider>
-            {sucursalData && sucursalData.id_ubicacion && sucursalData.id_ubicacion.latitud && (
-            <Geosector onGeoSectorSave={saveGeosector} prevValores={valorGeo} shadedPolygonCoordinates={{ latitude: sucursalData.id_ubicacion.latitud, longitude: sucursalData.id_ubicacion.longitud }} />
-
-            )}
             <Drawer
                 title="Crear empleado"
                 width={720}
